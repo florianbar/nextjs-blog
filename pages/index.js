@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Link from 'next/link'
+import Date from '../components/date'
 
 import { getSortedPostsData } from '../lib/posts';
 import Layout, { siteTitle } from '../components/layout';
@@ -31,9 +33,13 @@ const HomePage = ({ allPostsData }) => {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}<br />
-              {id}<br />
-              {date}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
