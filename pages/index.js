@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from 'next/link';
 
 const HomePage = () => {
   return (
@@ -10,7 +11,7 @@ const HomePage = () => {
 
       <main>
         <h1 className="title">
-          Learn <a href="https://nextjs.org">Next.js!</a>
+          Read <Link href="/posts/first-post"><a>this page!</a></Link>
         </h1>
 
         <p className="description">
